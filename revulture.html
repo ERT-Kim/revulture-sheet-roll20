@@ -1,0 +1,345 @@
+<div class="char-container">
+    <!--***************** Header Section *****************-->
+    <div class="header-section column-flex-section pretty-box metal linear" style="padding:10px">
+        <div class="label-title japanese-text">光砕のリヴァルチャー</div>
+        <div class="label-title english-text-title"><i>Reach the Sky, Revulture</i></div>
+        <div class="row-flex-section-center transparent-box" style="flex-grow:1; flex-shrink: 1;">
+            <div class="row-flex-section">
+                <div class="label-row-inline english-text-title">Chevalier</div><input name="attr_chevalier_name" type="text" style="width:12em">
+            </div>
+            <div class="label-row-inline" style="width:2em"></div>
+            <div class="row-flex-section">
+                <div class="label-row-inline english-text-title">Fiancé</div> <input name="attr_fiance_name" type="text" style="width:12em">
+            </div>
+        </div>
+    </div>
+    <!--***************** Revulture Description *****************-->
+    <div class="revulture-section column-flex-section inline-box metal linear" style="padding: 10px 0px">
+        <div class="row-flex-section outset-box">
+            <div class="label-row-title english-text-digital">Revulture</div>
+        </div>
+        <!--***************** Specification *****************-->
+        <div class="column-flex-section outset-box metal linear">
+            <!--***************** Frame *****************-->
+            <div class="row-flex-section">
+                <div class="row-flex-section two-col">
+                    <div class="label-row-inline">리벌쳐 이름</div> <input name="attr_character_name" type="text">
+                </div>
+                <div class="row-flex-section two-col">
+                    <div class="label-row-inline">프레임 이름</div> <input name="attr_frame_name" type="text">
+                </div>
+            </div>
+            <!--***************** Shield *****************-->
+            <div class="row-flex-section">
+                <div class="row-flex-section two-col">
+                    <div class="label-row-inline">실드 장수</div>
+                    <input name="attr_shield_number" type="number" value="0">
+                    <div class="text-row-inline">장 /</div>
+                    <input name="attr_shield_number_max" type="number" value="0">
+                    <div class="text-row-inline">장</div>
+                </div>
+                <div class="row-flex-section two-col">
+                    <div class="label-row-inline">실드 내구력</div>
+                    <input name="attr_shield_durability" type="number" value="0">
+                    <div class="text-row-inline">점 /</div>
+                    <input name="attr_shield_durability_max" type="number" value="0">
+                    <div class="text-row-inline">점</div>
+                </div>
+            </div>
+            <!--***************** Energy & Moves *****************-->
+            <div class="row-flex-section">
+                <div class="row-flex-section two-col">
+                    <div class="label-row-inline">지아드 에너지</div>
+                    <input name="attr_energy" type="number" value="0">
+                    <div class="text-row-inline">개</div>
+                    <button type="roll" value="/roll @{energy}d6 지아드 에너지 획득" name="roll_energy"></button>
+                </div>
+                <div class="column-flex-section  two-col">
+                    <div class="row-flex-section ">
+                        <div class="label-row-inline">노멀 무브</div>
+                        <input name="attr_normal_move_distance" type="number" value="0">
+                        <div class="text-row-inline">셀까지, </div>
+                        <div class="text-row-inline">소비 에너지</div>
+                        <input name="attr_normal_move_cost" value="1" type="number" value="0">
+                        <div class="text-row-inline">개</div>
+                    </div>
+                    <div class="row-flex-section ">
+                        <div class="label-row-inline">부스트 무브</div>
+                        <input name="attr_boost_move_distance" type="number" value="0">
+                        <div class="text-row-inline">셀까지, </div>
+                        <div class="text-row-inline">소비 에너지</div>
+                        <input name="attr_boost_move_cost" value="2" type="number" value="0">
+                        <div class="text-row-inline">개</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--***************** Weapons *****************-->
+        <div class="row-flex-section" style="margin: 5px 25px;">
+            <div class="column-flex-section outset-box metal linear" style="width: 370px; margin:0px 5px 0px 0px;">
+                <div class="row-flex-section ">
+                    <div class="label-row-inline">웨폰</div>
+                    <input name="attr_weapon_1_name" placeholder="웨폰 이름" type="text">
+                    <button type="roll" value="&{template:default} {{name=**@{weapon_1_name}**}} {{사정거리=@{weapon_1_range}셀~@{weapon_1_range|max}셀}} {{소비 에너지=@{weapon_1_cost}개}} {{목표치=@{weapon_1_target}}} {{효과=@{weapon_1_effect}}}" name="roll_weapon_1"></button>
+                </div>
+                <div class="row-flex-section">
+                    <div class="label-row-inline">사정거리</div>
+                    <input name="attr_weapon_1_range" type="number" value="0">
+                    <div style="text-align: center;">~</div>
+                    <input name="attr_weapon_1_range_max" type="number" value="0">
+                    <div>셀</div>
+                </div>
+                <div class="row-flex-section">
+                    <div class="label-row-inline">소비 에너지</div>
+                    <input name="attr_weapon_1_cost" type="number" value="0" value="0"> <div>개</div>
+                </div>
+                <div class="row-flex-section">
+                    <div class="label-row-inline">목표치</div>
+                    <input name="attr_weapon_1_target" type="text" style="flex-grow:1;">
+                </div>
+                <div class="column-flex-section">
+                    <div class="label-row-inline">효과</div>
+                    <textarea name="attr_weapon_1_effect" rows="4" title="" placeholder="웨폰 효과" style="flex-grow:1;"></textarea>
+                </div>
+            </div>
+            <div class="column-flex-section outset-box metal linear" style="width: 370px; margin:0px 0px 0px 5px;">
+                <div class="row-flex-section">
+                    <div class="label-row-inline">웨폰</div>
+                    <input name="attr_weapon_2_name" placeholder="웨폰 이름" type="text">
+                    <button type="roll" value="&{template:default} {{name=**@{weapon_2_name}**}} {{사정거리=@{weapon_2_range}셀~@{weapon_2_range|max}셀}} {{소비 에너지=@{weapon_2_cost}개}} {{목표치=@{weapon_2_target}}} {{효과=@{weapon_2_effect}}}" name="roll_weapon_2"></button>
+                </div>
+                <div class="row-flex-section">
+                    <div class="label-row-inline">사정거리</div>
+                    <input name="attr_weapon_2_range" type="number" value="0" value="0">
+                    <div style="width: 1.5em; text-align: center;">~</div>
+                    <input name="attr_weapon_2_range_max" type="number" value="0" value="0">
+                    <div>셀</div>
+                </div>
+                <div class="row-flex-section">
+                    <div class="label-row-inline">소비 에너지</div>
+                    <input name="attr_weapon_2_cost" type="number" value="0" value="0">
+                    <div>개</div>
+                </div>
+                <div class="row-flex-section">
+                    <div class="label-row-inline">목표치</div>
+                    <input name="attr_weapon_2_target" type="text" style="flex-grow:1;">
+                </div>
+                <div class="column-flex-section">
+                    <div class="label-row-inline">효과</div>
+                    <textarea name="attr_weapon_2_effect" rows="4" title="" placeholder="웨폰 효과" style="flex-grow:1;"></textarea>
+                </div>
+            </div>
+        </div>
+        <!--***************** Abilities *****************-->
+        <div class="column-flex-section outset-box metal linear">
+            <div class="column-flex-section">
+                <div class="row-flex-section">
+                    <div class="row-flex-section two-col">
+                        <div class="label-row-inline">어빌리티</div>
+                        <input name="attr_ability_1_name" type="text" placeholder="어빌리티 이름">
+                        <button type="roll" value="&{template:default} {{name=**@{ability_1_name}**}} {{타이밍=@{ability_1_timing}}} {{효과=@{ability_1_effect}}}" name="roll_ability_1"></button>
+                    </div>
+                    <div class="row-flex-section two-col">
+                        <div class="label-row-inline">타이밍</div>
+                        <input name="attr_ability_1_timing" type="text" class="input-long-field" style="flex-grow: 1">
+                    </div>
+                </div>
+                <div class="row-flex-section" style="align-items:stretch;">
+                    <div class="label-row-inline">효과</div>
+                    <div class="flex-fit-item">
+                        <textarea name="attr_ability_1_effect" rows="3" placeholder="어빌리티 효과"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="column-flex-section">
+                <div class="row-flex-section">
+                    <div class="row-flex-section two-col">
+                        <div class="label-row-inline">어빌리티</div>
+                        <input name="attr_ability_2_name" type="text" placeholder="어빌리티 이름">
+                        <button type="roll" value="&{template:default} {{name=**@{ability_2_name}**}} {{타이밍=@{ability_2_timing}}} {{효과=@{ability_2_effect}}}" name="roll_ability_2"></button>
+                    </div>
+                    <div class="row-flex-section two-col">
+                        <div class="label-row-inline">타이밍</div>
+                        <input name="attr_ability_2_timing" type="text" class="flex-fit-item">
+                    </div>
+                </div>
+                <div class="row-flex-section" style="align-items:stretch;">
+                    <div class="label-row-inline">효과</div>
+                    <div class="flex-fit-item">
+                        <textarea name="attr_ability_2_effect" rows="3" placeholder="어빌리티 효과"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="column-flex-section">
+                <div class="row-flex-section">
+                    <div class="row-flex-section two-col">
+                        <div class="label-row-inline">어빌리티</div>
+                        <input name="attr_ability_3_name" type="text" placeholder="어빌리티 이름">
+                        <button type="roll" value="&{template:default} {{name=**@{ability_3_name}**}} {{타이밍=@{ability_3_timing}}} {{효과=@{ability_3_effect}}}" name="roll_ability_3"></button>
+                    </div>
+                    <div class="row-flex-section two-col">
+                        <div class="label-row-inline">타이밍</div>
+                        <input name="attr_ability_3_timing" type="text" class="flex-fit-item">
+                    </div>
+                </div>
+                <div class="row-flex-section" style="align-items:stretch;">
+                    <div class="label-row-inline">효과</div>
+                    <div class="flex-fit-item">
+                        <textarea name="attr_ability_3_effect" rows="3" placeholder="어빌리티 효과"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="column-flex-section">
+                <div class="row-flex-section">
+                    <div class="row-flex-section two-col">
+                        <div class="label-row-inline">어빌리티</div>
+                        <input name="attr_ability_4_name" type="text" placeholder="어빌리티 이름">
+                        <button type="roll" value="&{template:default} {{name=**@{ability_4_name}**}} {{타이밍=@{ability_4_timing}}} {{효과=@{ability_4_effect}}}" name="roll_ability_4"></button>
+                    </div>
+                    <div class="row-flex-section two-col">
+                        <div class="label-row-inline">타이밍</div>
+                        <input name="attr_ability_4_timing" type="text" class="flex-fit-item">
+                    </div>
+                </div>
+                <div class="row-flex-section" style="align-items:stretch;">
+                    <div class="label-row-inline">효과</div>
+                    <div class="flex-fit-item">
+                        <textarea name="attr_ability_4_effect" rows="3" placeholder="어빌리티 효과"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--***************** 감정회로 *****************-->
+        <div class="row-flex-section outset-box metal linear">
+            <div class="label-row-inline">감정회로</div>
+            <div class="column-flex-section row-flex-item">
+                <div class="row-flex-section">
+                    <input type="checkbox" name="attr_chevalier_emotion_1_used" value="emotion_1" style="flex-basis:1.5em">
+                    <div class="row-flex-section" style="flex-basis: 2em; justify-content: center;"><button type="roll" value="&{template:default} {{name=**감정회로**}} {{내용=@{chevalier_emotion_1_desc}}} {{효과=?{효과 선택|지아드 에너지 획득,【지아드 에너지 획득】\n언제든 사용 가능.\n지아드 에너지를 1개 얻습니다.|지아드 스피어 집중 전개,【지아드 스피어 집중 전개】\n당신이 대미지를 받기 직전에 1회 사용 가능.\n다음에 받을 대미지를 절반으로(소수점 아래 버림)합니다.}}}" name="roll_emotion_circuit_1"></button></div>
+                    <input name="attr_chevalier_emotion_1_desc" type="text" placeholder="감정회로" class="flex-fit-item">
+                </div>
+                <div class="row-flex-section">
+                    <input type="checkbox" name="attr_chevalier_emotion_2_used" value="emotion_2" style="flex-basis:1.5em">
+                    <div class="row-flex-section" style="flex-basis: 2em; justify-content: center;"><button type="roll" value="&{template:default} {{name=**감정회로**}} {{내용=@{chevalier_emotion_2_desc}}} {{효과=?{효과 선택|지아드 에너지 획득,【지아드 에너지 획득】\n언제든 사용 가능.\n지아드 에너지를 1개 얻습니다.|지아드 스피어 집중 전개,【지아드 스피어 집중 전개】\n당신이 대미지를 받기 직전에 1회 사용 가능.\n다음에 받을 대미지를 절반으로(소수점 아래 버림)합니다.}}}" name="roll_emotion_circuit_2"></button></div>
+                    <input name="attr_chevalier_emotion_2_desc" type="text" placeholder="감정회로" class="flex-fit-item">
+                </div>
+                <div class="row-flex-section">
+                    <input type="checkbox" name="attr_chevalier_emotion_3_used" value="emotion_3" style="flex-basis:1.5em">
+                    <div class="row-flex-section" style="flex-basis: 2em; justify-content: center;"><button type="roll" value="&{template:default} {{name=**감정회로**}} {{내용=@{chevalier_emotion_3_desc}}} {{효과=?{효과 선택|지아드 에너지 획득,【지아드 에너지 획득】\n언제든 사용 가능.\n지아드 에너지를 1개 얻습니다.|지아드 스피어 집중 전개,【지아드 스피어 집중 전개】\n당신이 대미지를 받기 직전에 1회 사용 가능.\n다음에 받을 대미지를 절반으로(소수점 아래 버림)합니다.}}}" name="roll_emotion_circuit_3"></button></div>
+                    <input name="attr_chevalier_emotion_3_desc" type="text" placeholder="감정회로" class="flex-fit-item">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--***************** Chevalier Description *****************-->
+    <div class="chevalier-section column-flex-section inline-box metal linear" style="padding: 10px 0px">
+        <div class="label-row-title english-text-classic outset-box" style="text-align: left;margin-bottom: 0px; padding-bottom: 0px;">Chevalier</div>
+        <div class="column-flex-section outset-box">
+            <div class="row-flex-section">
+                <div class="label-row-inline">이름</div>
+                <input name="attr_chevalier_name" type="text" class="flex-fit-item">
+            </div>
+            <div class="row-flex-section">
+                <div class="label-row-inline">슈발리에 적성</div>
+                <input name="attr_chevalier_aptitude" type="text" class="flex-fit-item">
+            </div>
+            <div class="row-flex-section">
+                <div class="label-row-inline">당신의 이야기</div>
+                <input name="attr_chevalier_backstory" type="text" class="flex-fit-item">
+            </div>
+            <div class="column-flex-section">
+                <div class="label-row-inline">설정</div>
+                <textarea name="attr_chevalier_backstory_desc" title="" placeholder="설정 메모" class="flex-fit-item"></textarea>
+            </div>
+            <div class="column-flex-section">
+                <div class="label-row-inline">외모</div>
+                <textarea name="attr_chevalier_appearance_desc" title="" placeholder="외모 묘사" class="flex-fit-item"></textarea>
+            </div>
+            <div class="row-flex-section" style="margin:4px 0px">
+                <div class="label-row-inline">파트너에게 뭐라고 불리고 싶어?</div>
+                <input name="attr_chevalier_from_partner_name" type="text" class="flex-fit-item">
+            </div>
+            <div class="row-flex-section" style="margin:4px 0px">
+                <div class="label-row-inline">파트너를 어떻게 불러?</div>
+                <input name="attr_chevalier_to_partner_name" type="text" class="flex-fit-item">
+            </div>
+            <div class="row-flex-section">
+                <div class="label-row-inline">크로니클</div>
+                <div class="column-flex-section flex-fit-item">
+                    <input name="attr_chevalier_chronicle_1_name" type="text" placeholder="크로니클 이름" style="width:100%;">
+                    <input name="attr_chevalier_chronicle_2_name" type="text" placeholder="크로니클 이름" style="width:100%;">
+                </div>
+            </div>
+            <div class="column-flex-section">
+                <div class="label-row-inline">어치브먼트</div>
+                <div class="column-flex-section" style="margin-top:4px;margin-bottom:4px">
+                    <div class="row-flex-section" style="margin-bottom: 2px;">
+                        <input name="attr_chevalier_acheivement_1_name" type="text" placeholder="어치브먼트 이름">
+                        <input name="attr_chevalier_acheivement_1_timing" type="text" placeholder="어치브먼트 타이밍" class="flex-fit-item" style="margin:0px 2px">
+                        <div style="width: 2em"><button type="roll" value="&{template:default} {{name=**어치브먼트**}} {{이름=@{chevalier_acheivement_1_name}}} {{타이밍=@{chevalier_acheivement_1_timing}}} {{효과=@{chevalier_acheivement_1_effect}}}" name="roll_acheivement_1"></button></div>
+                    </div>
+                    <textarea name="attr_chevalier_acheivement_1_effect" rows="4" placeholder="어치브먼트 효과" class="flex-fit-item"></textarea>
+                </div>
+                <div class="column-flex-section" style="margin-top:4px;margin-bottom:4px">
+                    <div class="row-flex-section" style="margin-bottom: 2px;">
+                        <input name="attr_chevalier_acheivement_2_name" type="text" placeholder="어치브먼트 이름">
+                        <input name="attr_chevalier_acheivement_2_timing" type="text" placeholder="어치브먼트 타이밍" class="flex-fit-item" style="margin:0px 2px">
+                        <div style="width: 2em"><button type="roll" value="&{template:default} {{name=**어치브먼트**}} {{이름=@{chevalier_acheivement_2_name}}} {{타이밍=@{chevalier_acheivement_2_timing}}} {{효과=@{chevalier_acheivement_2_effect}}}" name="roll_acheivement_2"></button></div>
+                    </div>
+                    <textarea name="attr_chevalier_acheivement_2_effect" rows="4" placeholder="어치브먼트 효과"></textarea>
+                </div>
+                <div class="column-flex-section" style="margin-top:4px;margin-bottom:4px">
+                    <div class="row-flex-section" style="margin-bottom: 2px;">
+                        <input name="attr_chevalier_acheivement_3_name" type="text" placeholder="어치브먼트 이름">
+                        <input name="attr_chevalier_acheivement_3_timing" type="text" placeholder="어치브먼트 타이밍" class="flex-fit-item" style="margin:0px 2px">
+                        <div style="width: 2em"><button type="roll" value="&{template:default} {{name=**어치브먼트**}} {{이름=@{chevalier_acheivement_3_name}}} {{타이밍=@{chevalier_acheivement_3_timing}}} {{효과=@{chevalier_acheivement_3_effect}}}" name="roll_acheivement_3"></button></div>
+                    </div>
+                    <textarea name="attr_chevalier_acheivement_3_effect" rows="4" placeholder="어치브먼트 효과"></textarea>
+                </div>
+                <div class="column-flex-section" style="margin-top:4px;margin-bottom:4px">
+                    <div class="row-flex-section" style="margin-bottom: 0px;">
+                        <input name="attr_chevalier_acheivement_4_name" type="text" placeholder="어치브먼트 이름">
+                        <input name="attr_chevalier_acheivement_4_timing" type="text" placeholder="어치브먼트 타이밍"  class="flex-fit-item" style="margin:0px 2px">
+                        <div style="width: 2em"><button type="roll" value="&{template:default} {{name=**어치브먼트**}} {{이름=@{chevalier_acheivement_4_name}}} {{타이밍=@{chevalier_acheivement_4_timing}}} {{효과=@{chevalier_acheivement_4_effect}}}" name="roll_acheivement_4"></button></div>
+                    </div>
+                    <textarea name="attr_chevalier_acheivement_4_effect" rows="4" placeholder="어치브먼트 효과"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--***************** Fiance Description *****************-->
+    <div class="fiance-section column-flex-section inline-box metal linear" style="padding: 10px 0px">
+        <div class="label-row-title english-text-classic outset-box" style="text-align: right;margin-bottom: 0px; padding-bottom: 0px;">Fiancé</div>
+        <div class="column-flex-section outset-box">
+            <div class="row-flex-section">
+                <div class="label-row-inline">이름</div>
+                <input name="attr_fiance_name" type="text" class="flex-fit-item">
+            </div>
+            <div class="row-flex-section">
+                <div class="label-row-inline">피앙세 적성</div>
+                <input name="attr_fiance_aptitude" type="text" class="flex-fit-item">
+            </div>
+            <div class="row-flex-section">
+                <div class="label-row-inline">당신의 이야기</div>
+                <input name="attr_fiance_backstory" type="text" class="flex-fit-item">
+            </div>
+            <div class="column-flex-section">
+                <div class="label-row-inline">설정</div>
+                <textarea name="attr_fiance_backstory_desc" title="" placeholder="설정 메모" class="flex-fit-item"></textarea>
+            </div>
+            <div class="column-flex-section">
+                <div class="label-row-inline">외모</div>
+                <textarea name="attr_fiance_appearance_desc" title="" placeholder="외모 묘사" class="flex-fit-item"></textarea>
+            </div>
+            <div class="row-flex-section" style="margin:4px 0px">
+                <div class="label-row-inline">파트너에게 뭐라고 불리고 싶어?</div>
+                <input name="attr_fiance_from_partner_name" type="text" class="flex-fit-item">
+            </div>
+            <div class="row-flex-section" style="margin:4px 0px">
+                <div class="label-row-inline">파트너를 어떻게 불러?</div>
+                <input name="attr_fiance_to_partner_name" type="text" class="flex-fit-item">
+            </div>
+        </div>
+    </div>
+
+</div>

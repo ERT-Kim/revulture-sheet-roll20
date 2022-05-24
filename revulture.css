@@ -1,0 +1,197 @@
+/*------------------------- globals -------------------------*/
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif+JP:200|Wire+One|Orbitron|Cinzel+Decorative&display=swap');
+
+/*------------------------- input & text area -------------------------*/
+input{
+    box-sizing: border-box;
+    border: 1px solid thistle;
+}
+input[type="text"]{
+    width: 10em;
+}
+.input-long-field{
+    width: 16em !important;
+}
+.input-longest-field{
+    width: 30em !important;
+}
+.column-flex-section>input[type="text"]{
+    width: 100%;
+}
+textarea{
+    height: 70px !important;
+    padding: 5px;
+    box-sizing: border-box;
+    border: 1px solid thistle;
+    margin-bottom: 0px;
+    resize: vertical;
+}
+
+/*------------------------- text styling  -------------------------*/
+.japanese-text {
+    font-family: 'Noto Serif JP', serif;
+}
+.english-text-title {
+    font-family: 'Wire One', sans-serif;
+    letter-spacing: 4px;
+}
+.english-text-classic {
+    font-family: 'Cinzel Decorative', cursive;
+}
+.english-text-digital {
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 6px;
+}
+
+.label-title{
+    font-size: 2.5em;
+    font-weight: bold;
+    margin: 0px auto;
+}
+.label-row-title{
+    font-size: 2.5em;
+    font-weight: bold;
+    margin: 0px auto;
+}
+.label-row-inline{
+    font-size: 1.1em;
+    font-weight: bold;
+    width: 7.5em;
+    margin: 2px;
+    word-break: keep-all;
+}
+.text-row-inline{
+    font-size: 1em;
+    margin: 2px;
+    word-break: keep-all;
+}
+
+/*------------------------- box styling -------------------------*/
+.pretty-box{
+    border: 0px solid darkblue;
+    padding: 5px;
+    margin: 0px;
+}
+.inline-box{
+    border: 0px solid darkred;
+    padding: 0px;
+    margin: 0px;
+}
+.transparent-box{
+    border: 0px solid darkred;
+    padding: 0px;
+    margin: 0px;
+    background-color: rgba(255,255,255,0);
+}
+.outset-box{
+    margin: 5px 25px;
+    padding: 15px 15px 15px 15px;
+}
+
+.two-col{
+    width: 50%;
+}
+
+/*------------------------- grid and flex -------------------------*/
+.char-container {
+    display: grid;
+    width: 800px;
+    grid-column-gap: 5px;
+    grid-row-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 160px 1fr 0.85fr;
+    grid-template-areas:
+        "header header"
+        "revulture revulture"
+        "chevalier fiance";
+}
+.char-container div{
+    box-sizing: border-box;
+}
+.char-container .header-section{
+    grid-area: header;
+}
+.char-container .chevalier-section{
+    grid-area: chevalier;
+}
+.char-container .fiance-section{
+    grid-area: fiance;
+}
+.char-container .revulture-section{
+    grid-area: revulture;
+}
+
+.char-container .column-flex-section{
+    display:  flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+.char-container .outset-box>div{
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+.char-container .outset-box .column-flex-section>div{
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+.char-container .row-flex-section{
+    display:  flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+.char-container .row-flex-section-center{
+    display:  flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.char-container .header-section .label-row-inline{
+    font-size: 1.4em;
+    font-weight: bold;
+    width: 5em;
+    margin: 2px;
+    word-break: keep-all;
+}
+.char-container .row-flex-item{
+    flex-basis: 0;
+    flex-grow: 1;
+}
+.flex-fit-item{
+    flex-grow: 1;
+}
+
+
+/* ------------------------- Metal ------------------------- */
+/* orignally from simurai
+   (https://simurai.com/lab/2011/08/21/brushed-metal) */
+.metal {
+  color: hsla(0,0%,20%,1);
+  text-shadow: hsla(0,0%,40%,.5) 0 -1px 0, hsla(0,0%,100%,.6) 0 2px 1px;
+
+  background-color: hsl(0,0%,95%);
+  box-shadow: inset hsla(0,0%,15%,  1) 0  0px 0px 0px, /* border */
+    inset hsla(0,0%,15%, .8) 0 -1px 5px 4px, /* soft SD */
+    inset hsla(0,0%,0%, .25) 0 -1px 0px 7px, /* bottom SD */
+    inset hsla(0,0%,100%,.7) 0  2px 1px 7px, /* top HL */
+
+    hsla(0,0%, 0%,.15) 0 -5px 6px 2px, /* outer SD */
+    hsla(0,0%,100%,.5) 0  5px 6px 2px; /* outer HL */
+
+  transition: color .2s;
+}
+.metal.linear {
+  border-radius: .5em;
+  background-image: -webkit-repeating-linear-gradient(-60deg, hsla(0,0%,100%,0) 0%, hsla(0,0%,100%,0)   6%, hsla(0,0%,100%, .1) 7.5%),
+    -webkit-repeating-linear-gradient(-60deg, hsla(0,0%,  0%,0) 0%, hsla(0,0%,  0%,0)   4%, hsla(0,0%,  0%,.03) 4.5%),
+    -webkit-repeating-linear-gradient(-60deg, hsla(0,0%,100%,0) 0%, hsla(0,0%,100%,0) 1.2%, hsla(0,0%,100%,.15) 2.2%),
+
+    linear-gradient(-30deg, hsl(0,0%,83%)  0%,  /*hsl(0,0%,78%)*/
+    hsl(0,0%,95%) 45%,                          /*hsl(0,0%,90%)*/
+    hsl(0,0%,88%) 55%,                          /*hsl(0,0%,78%)*/
+    hsl(0,0%,75%)100%);                         /*hsl(0,0%,70%)*/
+}
